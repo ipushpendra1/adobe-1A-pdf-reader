@@ -82,3 +82,19 @@ export async function loginController(req, res) {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+export async function logoutController(req, res) {
+    res.clearCookie("token");
+    return res.status(200).json({
+        message: "User logged out successfully"
+    });
+}
