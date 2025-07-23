@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import config from "../config/config.js";
+const mongoose = require("mongoose");
+const config = require("../config/config");
 
 function connectDB() {
   mongoose.connect(config.MONGODB_URL)
@@ -7,4 +7,4 @@ function connectDB() {
     .catch((err) => console.error("❌ MongoDB connection error", err));
 }
 
-export default connectDB;
+module.exports = connectDB;

@@ -1,9 +1,8 @@
-import express from "express";
-import uploadRoutes from "./routes/upload.routes.js";
+const express = require("express");
+const uploadRoutes = require("./routes/upload.routes");
 
 const app = express();
 app.use(express.json());
+app.use("/post", uploadRoutes);
 
-app.use("/post", uploadRoutes); // POST endpoint
-
-export default app;
+module.exports = app;
